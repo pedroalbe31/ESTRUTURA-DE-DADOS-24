@@ -1,0 +1,42 @@
+COMANDOS GIT
+
+- Clonar repositório na máquina local:
+git clone https://github.com/pedroalbe31/ESTRUTURA-DE-DADOS-24.git
+
+- Ver status de repositório local
+git status
+
+- Adicionar arquivos não rastreados a serem confirmados
+git add .
+
+- Criar ponto de marcação no projeto/branch
+git commit -m "Meu primeiro commit"
+
+- Verificar repositórios remotos configurados no repo local
+git remote -v
+
+- Enviar commits pendentes para o repo remoto
+git push origin main
+
+
+-----
+COMANDOS DOT .NET
+
+- Listar versões instaladas
+dotnet --list-sdks
+
+- Criar novo projeto console
+dotnet new console -n "nome do projeto (Aula01)"
+
+- Executar programa 
+dotnet run
+
+- Executar programa c/ detalhes
+dotnet watch run
+------
+Aula03
+
+TAD = Tipo abstrato de Dados
+PascalCase  /  CamelCase = Parametro / _SnakeCase
+
+Método = Porcedimento / Função
