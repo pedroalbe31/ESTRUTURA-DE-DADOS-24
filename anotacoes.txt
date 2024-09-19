@@ -1,5 +1,5 @@
 A principal diferença entre o arraylist e o list é que o primeiro NÃO É FORTEMENTE TIPADO.
-===========================================================================================================================================================================================================
+===============================================================================================================================================================================
 Atividade 1:
 Crie um novo projeto para um programa que armaneze em uma lista, informações sobre livros, como Nome, Editora, Autor e Número de Páginas.
 Preencha esta lista com no mínimo 5 livros e ao final percorra esta lista e imprima as informções do livro com o maior número de páginas.
@@ -7,6 +7,9 @@ Preencha esta lista com no mínimo 5 livros e ao final percorra esta lista e imp
 ===============================================================================================================================================================================
 
 Atividade 2:
-Utilizando o conceitto de Pilha (Stack<>) com os métodos Pop() e Push(), escreva um programa que leia uma entrada do usuário e identifique a palavra é ou não um PALÍNDROMO.
+Utilizando o conceitto de Pilha (Stack<>) com os métodos Pop(Topo da pilha e desempilha) e Push(Retorna o valor), PEEK (Retorna o valor e continua),
+escreva um programa que leia uma entrada do usuário e identifique a palavra é ou não um PALÍNDROMO.
 
 ===============================================================================================================================================================================
+===============================================================================================================================================================================
+
