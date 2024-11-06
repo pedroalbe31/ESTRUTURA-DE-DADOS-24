@@ -1,20 +1,35 @@
-namespace ArvoresBasicasAtividade
+using ArvoresBasicasAtividade; 
+
+
+Tree<Person> company = new Tree<Person>();
+company.Root = new TreeNode<Person>()
 {
-    public class Tree<T>
+    Data = new Person(100, "Marcin Jamro", "CEO"),
+    Parent = null
+    };
+    company.Root.Children = new List<TreeNode<Person>>()
     {
-        public Node<T>? Root { get; set; }
-
-        public void PrintTree(Node<T> node)
-        {
-            Console.WriteLine($"Level: {node.GetHeight()}");
-            Console.WriteLine($"Node: {node.Data}");
-            Console.WriteLine();
-
-            if(node.Children!.Count() >0)
-
-                foreach(var i in node.Children!)
-                    PrintTree(i);
-
-        }
+    new TreeNode<Person>()
+    {
+    Data = new Person(1, "John Smith", "Head of Development"),
+    Parent = company.Root
+    },
+    new TreeNode<Person>()
+    {
+    Data = new Person(50, "Mary Fox", "Head of Research"),
+    Parent = company.Root
+    },
+    new TreeNode<Person>()
+    {
+    Data = new Person(150, "Lily Smith", "Head of Sales"),
+    Parent = company.Root
     }
-}
+    };
+    company.Root.Children[2].Children = new List<TreeNode<Person>>()
+    {
+    new TreeNode<Person>()
+    {
+    Data = new Person(30, "Anthony Black", "Sales Specialist"),
+    Parent = company.Root.Children[2]
+    }
+};
