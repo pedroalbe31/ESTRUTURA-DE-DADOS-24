@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Threading.Tasks;
 
-
-namespace ArvoreBinario
+namespace AtividadeQuizArvore
 {
     public class BinaryTreeNode<T> : TreeNode<T>
     {
