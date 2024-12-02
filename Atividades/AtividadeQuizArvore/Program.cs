@@ -1,19 +1,24 @@
-﻿using AtividadeQuizArvore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-    static void Main(string[] args)
-    {
+using Quiz; 
+
+ static void Main(string[] args)
+ {
     BinaryTree<QuizItem> tree = GetTree();
-    BinaryTreeNode<QuizItem> node = tree.Root;
+    BinaryTreeNode<QuizItem> node = tree.Root!;
     while (node != null)
     {
         if (node.Left != null || node.Right != null)
         {
-            Console.WriteLine(node.Data.Text);
+            Console.Write(node.Data.Text);
             switch (Console.ReadKey(true).Key)
             {
                 case ConsoleKey.Y:
                     WriteAnswer(" Yes");
-                    node = node.Left;
+                    node = node.Left!;
                     break;
                 case ConsoleKey.N:
                     WriteAnswer(" No");
@@ -24,69 +29,69 @@
         else
         {
             WriteAnswer(node.Data.Text);
-            node = null;
-        }
+            node = null!;
+        }  
     }
-    }
-        static void WriteAnswer(string text)
-        {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(text);
-            Console.ForegroundColor = ConsoleColor.Gray;
-        }
+ }
 
-        static BinaryTree<QuizItem> GetTree()
-        {
-        BinaryTree<QuizItem> tree = new BinaryTree<QuizItem>();
-        tree.Root = new BinaryTreeNode<QuizItem>()
-        {
-            Data = new QuizItem("Do you have experience in developing applications ? "),
+static void WriteAnswer(string text)
+ {
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine(text);
+    Console.ForegroundColor = ConsoleColor.Gray;
+ }
 
-            Children = new List<TreeNode<QuizItem>>()
-        {
-            new BinaryTreeNode<QuizItem>()
-        {
-            Data = new QuizItem("Have you worked as a developer for more than 5 years ? "),
+  static BinaryTree<QuizItem> GetTree()
+ {
+    BinaryTree<QuizItem> tree = new BinaryTree<QuizItem>();
+    tree.Root = new BinaryTreeNode<QuizItem>()
+    {
+        Data = new QuizItem("Do you have experience in developing applications?"),
         Children = new List<TreeNode<QuizItem>>()
         {
             new BinaryTreeNode<QuizItem>()
             {
-            Data = new QuizItem("Apply as a senior developer!")
+                Data = new QuizItem("Have you worked as a developer for more than 5 years?"),
+                Children = new List<TreeNode<QuizItem>>()
+                {
+                    new BinaryTreeNode<QuizItem>()
+                    {
+                        Data = new QuizItem("Apply as a senior developer!")
+                    },
+                    new BinaryTreeNode<QuizItem>()
+                    {
+                        Data = new QuizItem("Apply as a middle developer!")
+                    }
+                }
             },
             new BinaryTreeNode<QuizItem>()
             {
-            Data = new QuizItem("Apply as a middle developer!")
-            }
-        }
-        },
-        new BinaryTreeNode<QuizItem>()
-        {
-            Data = new QuizItem("Have you completed the university ? "),
-        Children = new List<TreeNode<QuizItem>>()
-        {
-        new BinaryTreeNode<QuizItem>()
-        {
-        Data = new QuizItem("Apply for a junior developer!")
-        },
-        new BinaryTreeNode<QuizItem>()
-        {
-        Data = new QuizItem("Will you find some time during the semester?"),
-        Children = new List<TreeNode<QuizItem>>()
-        {
-        new BinaryTreeNode<QuizItem>()
-        {
-        Data = new QuizItem("Apply for our long-time internship program!")
-        },
-        new BinaryTreeNode<QuizItem>()
-        {
-        Data = new QuizItem("Apply for summer internship program!")
-        }
+                Data = new QuizItem("Have you completed the university?"),
+                Children = new List<TreeNode<QuizItem>>()
+                {
+                    new BinaryTreeNode<QuizItem>()
+                    {
+                        Data = new QuizItem("Apply for a junior developer!")
+                    },
+                    new BinaryTreeNode<QuizItem>()
+                    {
+                        Data = new QuizItem("Will you find some time during the semester?"),
+                        Children = new List<TreeNode<QuizItem>>()
+                        {
+                            new BinaryTreeNode<QuizItem>()
+                            {
+                                Data = new QuizItem("Apply for our long-time internship program!")
+                            },
+                            new BinaryTreeNode<QuizItem>()
+                            {
+                                Data = new QuizItem("Apply for summer internship program!")
+                            }
                         }
                     }
                 }
             }
         }
     };
-        tree.Count = 9;
-        return tree;
-}
+    tree.Count = 9;
+    return tree;
+ }
